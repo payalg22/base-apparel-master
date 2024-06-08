@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Base Apparel Coming soon | Frontend Mentor</title>
+</head>
+
+<body>
+    <main>
+        <section>
+            <div class="details">
+                <img src="./images/logo.svg" alt="base-apparel-logo" id="logo">
+                <div class="details-item">
+                    <p class="heading">
+                        WE'RE <br>
+                        <span>COMING <br>
+                            SOON</span>
+                    </p>
+                    <p class="details-summary">
+                        Hello fellow shoppers! We're currently building our new fashion store.
+                        Add your email below to stay up-to-date with announcements and our launch deals.
+                    </p>
+                    <form action="" class="email-section" onsubmit="checkEmail(); return false;">
+                        <input type="text" class="email-input" id="email-id" name="email" value="Email Address">
+                        <img class="error-icon" id="warning" src="./images/icon-error.svg" alt="error-icom">
+                        <button id="submit-email" name="submit-email"><img src="./images/icon-arrow.svg"
+                                alt="next-step"></button>
+                    </form>
+                    <p class="error-alert" id="error-msg">Please provide a valid email</p>
+                </div>
+            </div>
+        </section>
+        <div class="hero-img">
+            <!-- <img src="./images/hero-desktop.jpg" alt=""> -->
+        </div>
+    </main>
+
+    <script>
+        function checkEmail(event) {
+            let emailVal = document.getElementById("email-id").value;
+            console.log(emailVal);
+            var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+            var isValid = emailVal.match(validRegex);
+            console.log(isValid);
+
+            if ((emailVal == null) || (isValid === null)) {
+                document.getElementById("warning").style = "display:block";
+                document.getElementById("error-msg").style = "display:block";
+                document.getElementById("email-id").classList.add("alert-border");
+            } else {
+                event.preventDefault();
+            }
+        }
+    </script>
+
+</body>
+
+</html>
