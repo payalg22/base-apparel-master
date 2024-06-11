@@ -11,36 +11,47 @@ main {
     display: flex;
 }
 
-section {
-    display: flex;
-    justify-content: center;
+.details {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid: 30vh 70vh / 60vw 40vw;
     align-items: center;
-    width: 60%;
 }
 
-.details {
+.logo-img {
+    grid-row: 1;
+    grid-column: 1;
+    justify-self: center;
     width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: start;
 }
 
 .hero-img {
-    width: 40%;
+    grid-column: 2;
+    grid-row: 1 / span 2 ;
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+}
+
+.hero-img img {
+    float: right;
     height: 100%;
-    background-image: url("./images/hero-desktop.jpg");
+    width: 95%;
 }
 
 .details-item {
+    justify-self: center;
+    grid-row: 2 ;
+    grid-column: 1;
     color: hsl(0, 36%, 70%);
-    height: 60%;
-    width: 100%;
+    height: 90%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: space-around;
+    align-self: start;
 }
 
 .heading {
@@ -58,7 +69,7 @@ section {
 
 .details-summary {
     line-height: 1.5;
-    padding-right: 20px;
+    letter-spacing: 0.5px;
 }
 
 .email-section {
@@ -112,3 +123,163 @@ section {
     border: solid 2px hsl(0, 93%, 68%);
     color: hsl(0, 6%, 24%);
 }
+
+@media (min-width: 1024px) and (max-width: 1200px) {
+    .details {
+        grid: 30vh 70vh / 50vw 50vw;
+    }
+
+    .details-item {
+        width: 75%;
+    }
+
+    .logo-img {
+        width: 74%;
+    }
+
+    .details-summary {
+        padding-right: 10px;
+    }
+}
+
+@media (min-width: 650px) and (max-width: 1024px) {
+    .details {
+        grid: 30vh 70vh / 50vw 50vw;
+    }
+
+    .details-item, .logo-img {
+        width: 80%;
+    }
+
+    .heading {
+        font-size: 3em;
+    }
+
+    .error-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (min-width: 426px) and (max-width: 650px) {
+    main {
+        height: 125vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .details {
+        grid: 10% 30% 60% / 100%;
+        width: 70%;
+    }
+
+    .logo-img {
+        grid-row: 1;
+        justify-self: start;
+        box-sizing: border-box;
+        padding: 10px 30px;
+    }
+
+    .hero-img {
+        grid-column: 1;
+        grid-row: 2;
+        height: 100%;
+        max-height: 100%;
+    }   
+
+    .hero-img img {
+        height: 100%;
+        width: 100%;
+        content: url("./images/hero-mobile.jpg");
+    }
+
+    .details-item {
+        grid-row: 3;
+        width: 85%;
+        align-self: center;
+        height: 70%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .heading {
+        font-size: 3em;
+    }
+
+    .email-input {
+        position: relative;
+        left: 10%;
+        padding: 10px 30px;
+    }
+
+    #submit-email {
+        right: 10%;
+        padding: 10px 20px;
+    }
+
+    .error-icon {
+        padding: 10px 0px;
+        right: 11%;
+    }
+}
+
+@media (max-width: 426px) {
+    main {
+        height: 150vh;
+    }
+
+    .details {
+        grid: 10% 30% 60% / 100%;
+    }
+
+    .logo-img {
+        grid-row: 1;
+        justify-self: start;
+        box-sizing: border-box;
+        padding: 10px 30px;
+    }
+
+    .hero-img {
+        grid-column: 1;
+        grid-row: 2;
+        height: 100%;
+        max-height: 100%;
+    }   
+
+    .hero-img img {
+        height: 100%;
+        width: 100%;
+        content: url("./images/hero-mobile.jpg");
+    }
+
+    .details-item {
+        grid-row: 3;
+        width: 85%;
+        align-self: center;
+        height: 70%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .heading {
+        font-size: 3em;
+    }
+
+    .email-input {
+        position: relative;
+        left: 10%;
+        padding: 10px 30px;
+    }
+
+    #submit-email {
+        right: 10%;
+        padding: 10px 20px;
+    }
+
+    .error-icon {
+        padding: 10px 0px;
+        right: 11%;
+    }
+}
+
+
